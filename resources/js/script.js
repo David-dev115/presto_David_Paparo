@@ -8,15 +8,13 @@ window.addEventListener('scroll' , ()=> {
     let scrolled = window.scrollY ;
 
     if (scrolled > 0){
-        navbar.classList.remove('bg-grey');
-        navbar.classList.add('bg-blue_2');
+        navbar.style.height='80px';
     } else {
-        navbar.classList.add('bg-grey');
-        navbar.classList.remove('bg-blue_2');
-        
+        navbar.style.height='60px';
+
     }
 
-    
+
 })
 
 

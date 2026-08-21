@@ -59,6 +59,11 @@ h1, h2, h3, h4, h5, h6{
 
 /* navbar */
 
+#navbar {
+    height: 60px;
+    transition: height 0.3s ease;
+}
+
 .nav-link{
     color: var(--black);
     transition: transform 0.3s;
@@ -70,7 +75,14 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .logo{
-    width: 40px;
-  
+    width: 30px;
+
+}
+
+
+/* footer */
+
+.footer-custom{
+    height: 200px;
 }
 
