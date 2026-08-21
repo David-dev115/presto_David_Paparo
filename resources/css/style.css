@@ -1,4 +1,76 @@
 
-.prova {
-    color: red;
+
+body{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
 }
+
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 600; */
+  font-style: normal;
+}
+
+:root {
+    --blue: rgb(166, 229, 222);
+    --blue_2: rgb(15, 118, 110);
+    --orange: rgb(245, 158, 11);
+    --white: rgb(248, 250, 252);
+    --black: rgb(23, 32, 51);
+    --grey: rgb(100, 116, 139);
+    --presto-border: rgb(226, 232, 240);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-blue_2 {
+    background-color: var(--blue_2);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-grey {
+    background-color: var(--grey);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-orange {
+    color: var(--orange);
+}
+
+.text-blue_2 {
+    color: var(--blue_2);
+}
+
+/* navbar */
+
+.nav-link{
+    color: var(--black);
+    transition: transform 0.3s;
+}
+
+.nav-link:hover{
+    color: var(--orange);
+    transform: scale(1.2);
+}
+
+.logo{
+    width: 40px;
+  
+}
+
