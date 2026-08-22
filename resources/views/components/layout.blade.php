@@ -22,7 +22,7 @@
 
     <x-navbar/>
 
-    <div class="min-vh-100">
+    <div class=" container-fluid min-vh-100">
 
         {{$slot}}
 
