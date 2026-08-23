@@ -20,17 +20,12 @@
 </head>
 <body>
     
-    <x-navbar/>
-    
-    <div class=" container-fluid min-vh-100">
-        
-        {{$slot}}
-        
-        
-    </div>
-    
-    
-    
-    <x-footer/>
+    <x-navbar />
+
+    <main>
+        {{ $slot }}
+    </main>
+
+    <x-footer />
 </body>
 </html>

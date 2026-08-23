@@ -1,8 +1,11 @@
 <div>
     {{-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius --}}
     
+
+
     <section class="row bg-blue d-flex justify-content-center align-items-center">
         
+
         <div class="col-12 col-md-6 col-lg-4 text-center mt-5">
             
             <h1 class="display-4 mt-5 form-title">Crea Articolo </h1>

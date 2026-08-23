@@ -1,0 +1,65 @@
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 255, 255, 0.35),
+            transparent 40%
+        ),
+        var(--blue);
+
+    padding: 100px 20px 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--blue_2);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 0.9;
+
+    color: var(--black);
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero-subtitle {
+    margin: 35px auto 10px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 500;
+
+    color: var(--black);
+}
+
+.hero-description {
+    margin-bottom: 35px;
+
+    color: var(--grey);
+    font-size: 1rem;
+}
