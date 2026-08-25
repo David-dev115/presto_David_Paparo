@@ -1,8 +1,7 @@
 
-
 <x-layout>
 
-    <section class="hero">
+    <div class="hero">
 
         <div class="hero-content text-center">
 
@@ -29,6 +28,44 @@
 
         </div>
 
-    </section>
+    </div>
+
+<section class="latest-articles">
+
+    <div class="container">
+
+        <div class="latest-articles-header">
+            <span>ULTIMI ANNUNCI</span>
+
+            <h2>
+                Scopri cosa c'è di nuovo.
+            </h2>
+
+            <p>
+                Gli ultimi oggetti inseriti su Presto.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            @forelse ($articles as $article)
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <x-card :article="$article"></x-card>
+                </div>
+
+            @empty
+
+                <div class="col-12">
+                    <h3 class="text-center">
+                        Non sono ancora stati creati articoli
+                    </h3>
+                </div>
+
+            @endforelse
+        </div>
+
+    </div>
+
+</section>
 
 </x-layout>

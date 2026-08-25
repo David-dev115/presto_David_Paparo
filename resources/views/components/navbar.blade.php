@@ -20,70 +20,104 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="{{route('articles.index')}}">Articoli</a> 
                     </li>
                     
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     
-                </ul>
-                
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown category-dropdown">
+                        <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        >
+                        Categorie
+                    </a>
                     
-                    <li class="nav-item dropdown">
+                    <ul class="dropdown-menu">
                         
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            
-                            @guest
-                            Accedi/Registrati
-                            @endguest
-                            
-                            @auth
-                            Benvenuto {{ Auth::user()->name }}
-                            @endauth
-                            
+                        @foreach ($categories as $category)
+                        
+                        <li>
+                            <a
+                            class="dropdown-item"
+                            href="{{ route('articles.byCategory', ['category' => $category ]) }}"
+                            >
+                            {{ $category->name }}
                         </a>
-                        
-                        <ul class="dropdown-menu">
-                            
-                            @guest
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="{{ 'register' }}">Registrati</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="{{ 'login' }}">Accedi</a>
-                            </li>
-                            @endguest
-                            
-                            @auth
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="{{ route('articles.create') }}">
-                                    Crea Articoli
-                                </a>
-                            </li>
-                            
-                            <li class="dropdown-item">
-                                <form action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                    <button class="dropdown-item" type="submit">
-                                        Esci
-                                    </button>
-                                </form>
-                            </li>
-                            @endauth
-                            
-                        </ul>
-                        
+                    </li>
+
+                    @if (!$loop->last)
+                    <hr class="dropdown-divider">
+                    @endif
+                    
+                    @endforeach
+                    
+                </ul>
+            </li>
+            
+            
+            
+        </ul>
+        
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            
+            <li class="nav-item dropdown">
+                
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                    @guest
+                    Accedi/Registrati
+                    @endguest
+                    
+                    @auth
+                    Benvenuto {{ Auth::user()->name }}
+                    @endauth
+                    
+                </a>
+                
+                <ul class="dropdown-menu">
+                    
+                    @guest
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ 'register' }}">Registrati</a>
                     </li>
                     
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ 'login' }}">Accedi</a>
+                    </li>
+                    @endguest
+                    
+                    @auth
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('articles.create') }}">
+                            Crea Articoli
+                        </a>
+                    </li>
+                    
+                    <li class="dropdown-item">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button class="dropdown-item" type="submit">
+                                Esci
+                            </button>
+                        </form>
+                    </li>
+                    @endauth
+                    
                 </ul>
                 
-            </div>
-        </div>
+            </li>
+            
+        </ul>
         
-        
-    </nav>
-    
-    
+    </div>
+</div>
+
+
+</nav>
+

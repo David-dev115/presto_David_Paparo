@@ -303,3 +303,46 @@ h1, h2, h3, h4, h5, h6{
     background-color: var(--orange);
     color: var(--white);
 }
+
+
+
+
+/* =========================
+   CATEGORY DROPDOWN
+   ========================= */
+
+.category-dropdown .dropdown-menu {
+    min-width: 220px;
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.category-dropdown .dropdown-item {
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    color: var(--black);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.category-dropdown .dropdown-item:hover {
+    background-color: var(--blue);
+
+    color: var(--black);
+}

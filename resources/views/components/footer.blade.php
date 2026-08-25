@@ -22,9 +22,9 @@
                 <h5 class="footer-title">Presto</h5>
 
                 <ul class="list-unstyled footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Annunci</a></li>
-                    <li><a href="#">Categorie</a></li>
+                    <li><a href="{{route('homepage')}}">Home</a></li>
+                    <li><a href="{{route('articles.index')}}">Articoli</a></li>
+                    <li><a href="#">Link da assegnare</a></li>
                 </ul>
             </div>
 

@@ -1,0 +1,218 @@
+/* article show */
+
+.article-show {
+    min-height: calc(100vh - 80px);
+
+    padding: 90px 20px 130px;
+
+    background-color: var(--blue);
+}
+
+
+/* gallery */
+
+.article-gallery {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.article-image {
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+}
+
+.article-image img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+
+/* Indicatori immagini */
+
+.article-gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.article-gallery-dots span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background-color: var(--grey);
+
+    opacity: 0.35;
+}
+
+.article-gallery-dots span.active {
+    background-color: var(--orange);
+
+    opacity: 1;
+}
+
+
+/* info annuncio */
+
+.article-info {
+    max-width: 600px;
+}
+
+.article-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--orange);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.article-title {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 0.95;
+
+    color: var(--black);
+}
+
+.article-price {
+    margin-top: 25px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--orange);
+}
+
+
+/* divisore */
+
+.article-divider {
+    width: 60px;
+    height: 4px;
+
+    margin: 30px 0;
+
+    background-color: var(--orange);
+}
+
+
+/* descrizione */
+
+.article-description h2 {
+    margin-bottom: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    color: var(--black);
+}
+
+.article-description p {
+    margin: 0;
+
+    color: var(--grey);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+
+   /* META */
+
+
+.article-meta {
+    margin-top: 30px;
+
+    color: var(--grey);
+
+    font-size: 0.8rem;
+}
+
+
+
+   /* AZIONI */
+
+
+.article-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.article-actions .btn {
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.article-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Torna agli annunci */
+
+.article-actions .btn-back {
+    background-color: var(--orange);
+    border: 2px solid var(--orange);
+
+    color: var(--black);
+}
+
+.article-actions .btn-back:hover {
+    background-color: var(--black);
+    border-color: var(--black);
+
+    color: var(--orange);
+}
+
+
+/* Categoria */
+
+.article-actions .btn-cat {
+    background-color: transparent;
+    border: 2px solid var(--black);
+
+    color: var(--black);
+}
+
+.article-actions .btn-cat:hover {
+    background-color: var(--black);
+
+    color: var(--orange);
+}

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
+use App\Models\Article;
+use App\Models\Category;
+
 class ArticleController extends Controller implements HasMiddleware
 {
     public static function middleware(): array
@@ -16,5 +19,27 @@ class ArticleController extends Controller implements HasMiddleware
     }
     public function create() {
         return view ('articles.create');
+    }
+
+        public function index () {
+
+        $articles = Article::orderBy('created_at' , 'desc')->paginate(6);
+        return view('articles.index' , compact('articles'));
+
+    }
+
+
+    public function show (Article $article) {
+
+        return view ('articles.show' , compact('article') );
+
+    }
+
+    public function byCategory(Category $category){
+        
+        return view('articles.byCategory', [
+        'articles' => $category->articles,
+        'category' => $category
+    ]);
     }
 }

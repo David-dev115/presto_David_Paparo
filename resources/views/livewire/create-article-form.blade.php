@@ -37,7 +37,7 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label for="price" class="form-label">Prezzo</label>
+                    <label for="price" class="form-label">Prezzo (€)</label>
                     <input wire:model.live="price"  type="text" class="form-control {{--@error('price') in-invalid @enderror--}} " id="price">
                     {{-- @error('price') --}}
                     {{-- <p class="fst-italic text-danger">{{ $message }}</p> --}}

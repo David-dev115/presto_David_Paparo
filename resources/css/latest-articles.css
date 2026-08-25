@@ -1,0 +1,212 @@
+.latest-articles {
+    position: relative;
+
+    padding: 40px 20px 110px;
+
+    background-color: var(--blue);
+}
+
+/* Separatore tra hero e annunci */
+
+.latest-articles::before {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    margin: -2px auto 40px;
+
+    background-color: var(--orange);
+}
+
+
+/* Intestazione */
+
+.latest-articles-header {
+    max-width: 750px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.latest-articles-header span {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--orange);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.latest-articles-header h2 {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+
+    color: var(--black);
+}
+
+.latest-articles-header p {
+    margin: 20px 0 0;
+
+    color: var(--grey);
+
+    font-size: 1rem;
+}
+
+
+/* Griglia annunci */
+
+.latest-articles .row {
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+
+
+
+/* card annuncio */
+
+.card-w {
+    width: 100% !important;
+    height: 100%;
+
+    overflow: hidden;
+
+    border: none;
+    border-radius: 18px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card-w:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* immagine */
+
+.card-w .card-img-top {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* corpo */
+
+.card-w .card-body {
+    padding: 25px;
+    background-color:var(--white);
+}
+
+
+/* titolo */
+
+.card-w .card-title {
+    margin-bottom: 8px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: var(--black);
+    text-align: center
+}
+
+
+/* prezzo */
+
+.card-w .card-subtitle {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: var(--black);
+    text-align: center
+}
+
+
+/* contenitore bottoni */
+
+.card-w .card-body .d-flex {
+    gap: 10px;
+}
+
+
+/* bottoni */
+
+.card-w .btn {
+    padding: 9px 16px;
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Dettaglio */
+
+.card-w .btn-det {
+    background-color: var(--orange);
+    border: 2px solid var(--orange);
+
+    color: var(--black);
+}
+
+.card-w .btn-det:hover {
+    background-color: var(--black);
+    border-color: var(--black);
+
+    color: var(--orange);
+
+    transform: translateY(-2px);
+}
+
+
+/* Categoria */
+
+.card-w .btn-cat {
+    background-color: transparent;
+    border: 2px solid var(--black);
+
+    color: var(--black);
+}
+
+.card-w .btn-cat:hover {
+    background-color: var(--black);
+
+    color: var(--orange);
+
+    transform: translateY(-2px);
+}

@@ -1,0 +1,150 @@
+/* article index */
+
+.articles-index {
+    min-height: calc(100vh - 80px);
+
+    padding: 90px 20px 130px;
+
+    background-color: var(--blue);
+}
+
+
+/* header */
+
+.articles-index-header {
+    max-width: 800px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.articles-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--orange);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.articles-index-header h1 {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+
+    color: var(--black);
+}
+
+.articles-index-header p {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    color: var(--grey);
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* grid */
+
+.articles-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+
+
+.articles-empty {
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.articles-empty h3 {
+    margin: 0;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: var(--black);
+}
+
+
+/* paginazione */
+
+.articles-pagination {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 70px;
+}
+
+.articles-pagination nav {
+    display: flex;
+    justify-content: center;
+}
+
+.articles-pagination .pagination {
+    gap: 8px;
+
+    margin: 0;
+}
+
+.articles-pagination .page-link {
+    min-width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: var(--black);
+
+    font-weight: 600;
+
+    box-shadow: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.articles-pagination .page-link:hover {
+    background-color: var(--orange);
+
+    color: var(--black);
+
+    transform: translateY(-2px);
+}
+
+.articles-pagination .page-item.active .page-link {
+    background-color: var(--black);
+
+    color: var(--orange);
+}
+
+.articles-pagination .page-item.disabled .page-link {
+    opacity: 0.45;
+
+    background-color: #ffffff;
+
+    color: var(--grey);
+}
