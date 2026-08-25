@@ -12,7 +12,7 @@
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
-            {{-- <ul class="navbar-nav position-absolute start-50 translate-middle-x menu-centrale"> --}}
+            
                 <ul class="navbar-nav menu-centrale mb-2 mb-lg-0">
                     
                     <li class="nav-item">
@@ -50,7 +50,7 @@
                             {{ $category->name }}
                         </a>
                     </li>
-
+                    
                     @if (!$loop->last)
                     <hr class="dropdown-divider">
                     @endif
@@ -65,8 +65,8 @@
         </ul>
         
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown category-dropdown"> --}}
+            <li class="nav-item dropdown category-dropdown">
                 
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     
@@ -84,11 +84,11 @@
                     
                     @guest
                     <li class="nav-item">
-                        <a class="dropdown-item" href="{{ 'register' }}">Registrati</a>
+                        <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="dropdown-item" href="{{ 'login' }}">Accedi</a>
+                        <a class="dropdown-item" href="{{ route('login')  }}">Accedi</a>
                     </li>
                     @endguest
                     
@@ -96,6 +96,12 @@
                     <li class="nav-item">
                         <a class="dropdown-item" href="{{ route('articles.create') }}">
                             Crea Articoli
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('articles.myArticles') }}">
+                            I miei articoli
                         </a>
                     </li>
                     

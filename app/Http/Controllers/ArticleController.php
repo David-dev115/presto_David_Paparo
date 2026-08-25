@@ -14,7 +14,7 @@ class ArticleController extends Controller implements HasMiddleware
     public static function middleware(): array
     {
         return [
-            new Middleware('auth', only: ['create']),
+            new Middleware('auth', only: ['create' , 'myArticles']),
         ];
     }
     public function create() {
@@ -41,5 +41,12 @@ class ArticleController extends Controller implements HasMiddleware
         'articles' => $category->articles,
         'category' => $category
     ]);
+    }
+
+    public function myArticles()
+    {
+    $articles = auth()->user()->articles()->latest()->get();
+
+    return view('articles.myArticles', compact('articles'));
     }
 }

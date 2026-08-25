@@ -4,24 +4,20 @@
 
         <div class="container">
 
-            <header class="articles-category-header">
+            <header class="articles-index-header">
 
                 <span class="articles-eyebrow">
-                    CATEGORIA
+                    I MIEI ARTICOLI
                 </span>
 
                 <h1>
-                    {{ $category->name }}
+                    I miei annunci
                 </h1>
-
-                <p>
-                    Scopri tutti gli annunci disponibili in questa categoria.
-                </p>
 
             </header>
 
 
-            <div class="row g-4 articles-category-grid">
+            <div class="row g-4 articles-grid">
 
                 @forelse ($articles as $article)
 
@@ -31,12 +27,10 @@
 
                 @empty
 
-                    <div class="col-12 articles-category-empty">
-
+                    <div class="col-12 articles-empty">
                         <h3>
-                            Non ci sono ancora annunci in questa categoria.
+                            Non hai ancora creato articoli
                         </h3>
-
                     </div>
 
                 @endforelse

@@ -17,5 +17,4 @@ Route::get('/show/article/{article}' , [ArticleController::class , 'show'])->nam
 
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('articles.byCategory');
 
-
-
+Route::get('/my/articles', [ArticleController::class, 'myArticles'])->name('articles.myArticles');
