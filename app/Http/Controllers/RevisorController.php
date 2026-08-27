@@ -6,6 +6,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+
+use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
+
+use App\Mail\BecomeRevisor;
+
 class RevisorController extends Controller
 {
     public function index() {
@@ -24,8 +32,20 @@ class RevisorController extends Controller
         public function reject(Article $article){
 
         $article->setAccepted(false);
-        return redirect()->back()->with('message' , "Respinto articolo $article->title");
+               return redirect()->back()->with('message' , "Respinto articolo $article->title");
     }
 
+        public function becomeRevisor(){
+        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+
+        return redirect()->route('homepage')->with('message', 'Complimenti, Hai richiesto di diventare revisore');
+        }
+
+        public function makeRevisor(User $user)
+        {
+        Artisan::call('app:make-user-revisor', ['email' => $user->email]);
+
+        return redirect()->route('homepage');
+        }
 
 }

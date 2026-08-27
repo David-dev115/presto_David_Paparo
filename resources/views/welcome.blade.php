@@ -1,11 +1,20 @@
 
 <x-layout>
     
+    
+    
     <div class="hero">
         
         
         
         <div class="hero-content text-center">
+            
+            {{-- conferma richiesta per diventare revisore --}}
+            @if (session()->has('message'))
+            <div class="col-5 alert alert-success text-center shadow rounded w-50 mx-auto">
+                {{ session('message') }}
+            </div>
+            @endif
             
             @if (session()->has('errorMessage'))
             <div class="col-5 alert alert-danger text-center shadow rounded w-50 mx-auto mb-4">
