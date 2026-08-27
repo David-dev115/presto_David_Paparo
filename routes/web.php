@@ -21,4 +21,8 @@ Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->na
 
 Route::get('/my/articles', [ArticleController::class, 'myArticles'])->name('articles.myArticles');
 
-Route::get('/revisor/index' , [RevisorController::class , 'index'])->name('revisor.index');
+Route::get('/revisor/index' , [RevisorController::class , 'index'])->name('revisor.index')->middleware('isRevisor');
+
+Route::patch('/accept/{article}' , [RevisorController::class , 'accept'])->name('accept');
+
+Route::patch('/reject/{article}' , [RevisorController::class , 'reject'])->name('reject');

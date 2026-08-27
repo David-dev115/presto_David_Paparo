@@ -13,115 +13,133 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
             
-                <ul class="navbar-nav menu-centrale mb-2 mb-lg-0">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{route('homepage')}}">Home</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('articles.index')}}">Articoli</a> 
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    
-                    <li class="nav-item dropdown category-dropdown">
-                        <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                        >
-                        Categorie
-                    </a>
-                    
-                    <ul class="dropdown-menu">
-                        
-                        @foreach ($categories as $category)
-                        
-                        <li>
-                            <a
-                            class="dropdown-item"
-                            href="{{ route('articles.byCategory', ['category' => $category ]) }}"
-                            >
-                            {{ $category->name }}
-                        </a>
-                    </li>
-                    
-                    @if (!$loop->last)
-                    <hr class="dropdown-divider">
-                    @endif
-                    
-                    @endforeach
-                    
-                </ul>
-            </li>
-            
-            
-            
-        </ul>
-        
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            {{-- <li class="nav-item dropdown category-dropdown"> --}}
-            <li class="nav-item dropdown category-dropdown">
+            <ul class="navbar-nav menu-centrale mb-2 mb-lg-0">
                 
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    
-                    @guest
-                    Accedi/Registrati
-                    @endguest
-                    
-                    @auth
-                    Benvenuto {{ Auth::user()->name }}
-                    @endauth
-                    
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{route('homepage')}}">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('articles.index')}}">Articoli</a> 
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                
+                <li class="nav-item dropdown category-dropdown">
+                    <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >
+                    Categorie
                 </a>
                 
                 <ul class="dropdown-menu">
                     
-                    @guest
-                    <li class="nav-item">
-                        <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
-                    </li>
+                    @foreach ($categories as $category)
                     
-                    <li class="nav-item">
-                        <a class="dropdown-item" href="{{ route('login')  }}">Accedi</a>
-                    </li>
-                    @endguest
-                    
-                    @auth
-                    <li class="nav-item">
-                        <a class="dropdown-item" href="{{ route('articles.create') }}">
-                            Crea Articoli
-                        </a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="dropdown-item" href="{{ route('articles.myArticles') }}">
-                            I miei articoli
-                        </a>
-                    </li>
-                    
-                    <li class="dropdown-item">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="dropdown-item" type="submit">
-                                Esci
-                            </button>
-                        </form>
-                    </li>
-                    @endauth
-                    
-                </ul>
+                    <li>
+                        <a
+                        class="dropdown-item"
+                        href="{{ route('articles.byCategory', ['category' => $category ]) }}"
+                        >
+                        {{ $category->name }}
+                    </a>
+                </li>
                 
-            </li>
-            
-        </ul>
+                @if (!$loop->last)
+                <hr class="dropdown-divider">
+                @endif
+                
+                @endforeach
+                
+            </ul>
+        </li>
         
-    </div>
+        
+        
+    </ul>
+    
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+        @auth
+        @if (Auth::user()->is_revisor)
+        
+        <li class="nav-item">
+            <a class="nav-link position-relative" href="{{ route('revisor.index') }}">
+                Area revisore
+
+                
+                <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
+                    {{ \App\Models\Article::toBeRevisedCount() }}
+                </span>
+            </a>
+        </li>
+        
+        @endif
+        @endauth
+        
+        
+        <li class="nav-item dropdown category-dropdown">
+            
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                @guest
+                Accedi/Registrati
+                @endguest
+                
+                @auth
+                Benvenuto {{ Auth::user()->name }}
+                @endauth
+                
+            </a>
+            
+            <ul class="dropdown-menu">
+                
+                @guest
+                <li class="nav-item">
+                    <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="dropdown-item" href="{{ route('login')  }}">Accedi</a>
+                </li>
+                @endguest
+                
+                @auth
+                <li class="nav-item">
+                    <a class="dropdown-item" href="{{ route('articles.create') }}">
+                        Crea Articoli
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="dropdown-item" href="{{ route('articles.myArticles') }}">
+                        I miei articoli
+                    </a>
+                </li>
+                
+                <li class="dropdown-item">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="dropdown-item" type="submit">
+                            Esci
+                        </button>
+                    </form>
+                </li>
+                @endauth
+                
+            </ul>
+            
+        </li>
+        
+    </ul>
+    
+</div>
 </div>
 
 
