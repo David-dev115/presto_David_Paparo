@@ -63,6 +63,8 @@
         
     </ul>
     
+    
+    
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         
         @auth
@@ -71,7 +73,7 @@
         <li class="nav-item">
             <a class="nav-link position-relative" href="{{ route('revisor.index') }}">
                 Area revisore
-
+                
                 
                 <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
                     {{ \App\Models\Article::toBeRevisedCount() }}
@@ -82,6 +84,17 @@
         @endif
         @endauth
         
+        
+        
+        {{-- inizio search --}}
+        <form action="{{ route('article.search') }}" method="GET" class="d-flex search-form" role="search">
+            <input class="form-control search-input" type="search" name="query" placeholder="Cerca..." aria-label="Cerca" required >
+            
+            <button class="btn search-button" type="submit">
+                Cerca
+            </button>
+        </form>
+        {{-- fine search --}}
         
         <li class="nav-item dropdown category-dropdown">
             
