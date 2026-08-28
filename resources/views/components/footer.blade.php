@@ -34,8 +34,8 @@
                     @auth
                     @if (!Auth::user()->is_revisor)
                     <li>
-                        <a href="{{ route('become.revisor') }}">
-                            Diventa revisore
+                        <a href="{{ route('revisor.become') }}">
+                            Richiedi di diventare revisore
                         </a>
                     </li>
                     @endif

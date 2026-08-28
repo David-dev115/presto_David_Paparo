@@ -48,4 +48,8 @@ class RevisorController extends Controller
         return redirect()->route('homepage');
         }
 
+        public function becomeRevisorInfo(){
+        return view('revisor.become');
+        }
+
 }

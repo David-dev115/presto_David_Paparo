@@ -30,3 +30,5 @@ Route::patch('/reject/{article}' , [RevisorController::class , 'reject'])->name(
 Route::get('/become/revisor', [RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('auth');
 
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+Route::get('/become/revisor/info', [RevisorController::class, 'becomeRevisorInfo'])->name('revisor.become')->middleware('auth');
