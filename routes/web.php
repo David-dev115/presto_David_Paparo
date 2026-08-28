@@ -23,9 +23,9 @@ Route::get('/my/articles', [ArticleController::class, 'myArticles'])->name('arti
 
 Route::get('/revisor/index' , [RevisorController::class , 'index'])->name('revisor.index')->middleware('isRevisor');
 
-Route::patch('/accept/{article}' , [RevisorController::class , 'accept'])->name('accept');
+Route::patch('/accept/{article}' , [RevisorController::class , 'accept'])->name('accept')->middleware('isRevisor');
 
-Route::patch('/reject/{article}' , [RevisorController::class , 'reject'])->name('reject');
+Route::patch('/reject/{article}' , [RevisorController::class , 'reject'])->name('reject')->middleware('isRevisor');
 
 Route::get('/become/revisor', [RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('auth');
 
