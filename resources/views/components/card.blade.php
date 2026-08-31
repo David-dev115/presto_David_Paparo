@@ -23,14 +23,14 @@
                 href="{{ route('articles.show', compact('article')) }}"
                 class="btn btn-det"
             >
-                Dettaglio
+                {{ __('ui.details') }}
             </a>
 
             <a
                 href="{{ route('articles.byCategory', $article->category) }}"
                 class="btn btn-cat"
             >
-                Categoria
+                {{ __('ui.category') }}
             </a>
 
         </div>

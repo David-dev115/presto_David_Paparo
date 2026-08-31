@@ -24,7 +24,7 @@
             
             
             <span class="hero-eyebrow">
-                IL TUO MARKETPLACE
+                {{ __('ui.marketplace') }}
             </span>
             
             <h1>
@@ -32,15 +32,15 @@
             </h1>
             
             <p class="hero-subtitle">
-                Dai una seconda vita a ciò che non usi più.
+               {{ __('ui.hero_subtitle') }}
             </p>
             
             <p class="hero-description">
-                Compra, vendi e trova qualcosa di speciale.
+              {{ __('ui.hero_description') }}
             </p>
             
             <a href="{{ route('articles.create') }}" class="hero-button">
-                Inserisci annuncio
+                {{ __('ui.insert_ad') }}
                 <i class="bi bi-arrow-right"></i>
             </a>
             
@@ -53,14 +53,14 @@
         <div class="container">
             
             <div class="latest-articles-header">
-                <span>ULTIMI ANNUNCI</span>
+                <span>{{ __('ui.latest_ads') }} </span>
                 
                 <h2>
-                    Scopri cosa c'è di nuovo.
+                    {{ __('ui.discover_new') }}
                 </h2>
                 
                 <p>
-                    Gli ultimi oggetti inseriti su Presto.
+                    {{ __('ui.latest_items') }}
                 </p>
             </div>
             
@@ -75,7 +75,7 @@
                 
                 <div class="col-12">
                     <h3 class="text-center">
-                        Non sono ancora stati creati articoli
+                        {{ __('ui.no_articles') }}
                     </h3>
                 </div>
                 

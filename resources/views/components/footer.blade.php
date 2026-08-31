@@ -9,17 +9,16 @@
                 <img src="/media/logo-blue.png" alt="Presto" class="footer-logo mb-3">
                 
                 
-                <h4 class="text-white">Compra. Vendi. Presto.</h4>
+                <h4 class="text-white">{{ __('ui.footer_tagline') }}</h4>
                 
                 <p class="footer-description">
-                    Dai una seconda vita agli oggetti che non usi più
-                    e trova qualcosa di speciale sulla nostra piattaforma.
+                   {{ __('ui.footer_description') }}
                 </p>
             </div>
             
             {{-- Links --}}
             <div class="col-6 col-md-3">
-                <h5 class="footer-title">Presto</h5>
+                <h5 class="footer-title">{{ __('ui.footer_title') }} </h5>
                 
                 {{-- <ul class="list-unstyled footer-links">
                     <li><a href="{{route('homepage')}}">Home</a></li>
@@ -27,15 +26,15 @@
                     <li><a href="#">Link da assegnare</a></li>
                 </ul> --}}
                 <ul class="list-unstyled footer-links">
-                    <li><a href="{{ route('homepage') }}">Home</a></li>
-                    <li><a href="{{ route('articles.index') }}">Articoli</a></li>
+                    <li><a href="{{ route('homepage') }}">{{ __('ui.footer_home') }}</a></li>
+                    <li><a href="{{ route('articles.index') }}">{{ __('ui.footer_articles') }}</a></li>
                     <li><a href="#">Link da assegnare</a></li>
                     
                     @auth
                     @if (!Auth::user()->is_revisor)
                     <li>
                         <a href="{{ route('revisor.become') }}">
-                            Richiedi di diventare revisore
+                            {{ __('ui.become_revisor') }}
                         </a>
                     </li>
                     @endif
@@ -45,7 +44,7 @@
             
             {{-- Social --}}
             <div class="col-6 col-md-4">
-                <h5 class="footer-title">Seguici</h5>
+                <h5 class="footer-title">{{ __('ui.follow_us') }}</h5>
                 
                 <div class="footer-socials">
                     <a href="#" aria-label="Facebook">
@@ -67,7 +66,7 @@
         <hr class="footer-divider">
         
         <div class="footer-bottom">
-            <p class="footer-title">Presto è un progetto di David WebDeveloper </p>
+            <p class="footer-title">{{ __('ui.footer_credits') }}   </p>
         </div>
         
     </div>

@@ -15,11 +15,15 @@
             <ul class="navbar-nav menu-centrale mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{route('homepage')}}">Home</a>
+                    
+                    <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">
+                    {{ __('ui.home') }}
+                    </a>
+
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('articles.index')}}">Articoli</a> 
+                    <a class="nav-link" href="{{route('articles.index')}}">{{ __('ui.articles') }}</a> 
                 </li>
                 
                 <li class="nav-item">
@@ -34,7 +38,7 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                     >
-                    Categorie
+                    {{ __('ui.categories') }}
                 </a>
                 
                 <ul class="dropdown-menu">
@@ -72,7 +76,7 @@
         
         <li class="nav-item">
             <a class="nav-link position-relative" href="{{ route('revisor.index') }}">
-                Area revisore
+                {{ __('ui.reviewer_area') }}
                 
                 
                 <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
@@ -85,13 +89,19 @@
         @endauth
         
         
+        {{-- cambio lingua --}}
+        <x-_locale lang="it" />
+        <x-_locale lang="uk" />
+        <x-_locale lang="es" />
+        
         
         {{-- inizio search --}}
         <form action="{{ route('article.search') }}" method="GET" class="d-flex search-form" role="search">
-            <input class="form-control search-input" type="search" name="query" placeholder="Cerca..." aria-label="Cerca" required >
+            <input class="form-control search-input" type="search" name="query" placeholder="{{ __('ui.search_placeholder') }}" aria-label="Cerca" required >
             
             <button class="btn search-button" type="submit">
-                Cerca
+                {{ __('ui.search') }}
+
             </button>
         </form>
         {{-- fine search --}}
@@ -101,11 +111,11 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 
                 @guest
-                Accedi/Registrati
+                {{ __('ui.login_register') }}
                 @endguest
                 
                 @auth
-                Benvenuto {{ Auth::user()->name }}
+                {{ __('ui.welcome') }} {{ Auth::user()->name }}
                 @endauth
                 
             </a>
@@ -114,24 +124,24 @@
                 
                 @guest
                 <li class="nav-item">
-                    <a class="dropdown-item" href="{{ route('register') }}">Registrati</a>
+                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="dropdown-item" href="{{ route('login')  }}">Accedi</a>
+                    <a class="dropdown-item" href="{{ route('login')  }}">{{ __('ui.login') }}</a>
                 </li>
                 @endguest
                 
                 @auth
                 <li class="nav-item">
                     <a class="dropdown-item" href="{{ route('articles.create') }}">
-                        Crea Articoli
+                        {{ __('ui.create_articles') }}
                     </a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="dropdown-item" href="{{ route('articles.myArticles') }}">
-                        I miei articoli
+                        {{ __('ui.my_articles') }}
                     </a>
                 </li>
                 
@@ -139,7 +149,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="dropdown-item" type="submit">
-                            Esci
+                            {{ __('ui.logout') }}
                         </button>
                     </form>
                 </li>
