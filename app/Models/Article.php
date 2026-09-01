@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use Laravel\Scout\Searchable;
 
+use App\Models\Image;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Article extends Model
 {
     use HasFactory;
@@ -50,5 +53,10 @@ class Article extends Model
         'category' => $this->category,
     ];
     }
+
+    public function images(): HasMany{
+    return $this->hasMany(Image::class);
+    }
+
 
 }

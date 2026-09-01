@@ -36,7 +36,49 @@
                     
                     <div class="row g-3">
                         
-                        @for ($i = 1; $i <= 6; $i++)
+                        {{-- inizio nuovo --}}
+                        
+                        @if ($article_to_check->images->count() > 0)
+                        
+                        @foreach ($article_to_check->images as $image)
+                        
+                        <div class="col-6">
+                            
+                            <div class="bg-white overflow-hidden" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
+                                
+                                <img src="{{ Storage::url($image->path) }}"
+                                alt="Immagine dell'annuncio {{ $article_to_check->title }}"
+                                class="w-100"
+                                style="aspect-ratio: 1 / 1; object-fit: cover; display: block;">
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        @endforeach
+                        
+                        @else
+                        
+                        <div class="col-6">
+                            
+                            <div class="bg-white overflow-hidden" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
+                                
+                                <img src="https://picsum.photos/500/500?random=1"
+                                alt="Immagine segnaposto dell'annuncio {{ $article_to_check->title }}"
+                                class="w-100"
+                                style="aspect-ratio: 1 / 1; object-fit: cover; display: block;">
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        @endif
+                        
+                        {{-- fine nuovo --}}
+                        
+                        {{-- inizio vecchio sistema --}}
+                        
+                        {{-- @for ($i = 1; $i <= 6; $i++)
                         
                         <div class="col-6">
                             
@@ -48,7 +90,10 @@
                             
                         </div>
                         
-                        @endfor
+                        @endfor --}}
+                        
+                        {{-- fine vecchio sistema --}}
+                        
                         
                     </div>
                     

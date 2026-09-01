@@ -307,9 +307,9 @@ h1, h2, h3, h4, h5, h6{
 
 
 
-/* =========================
-   CATEGORY DROPDOWN
-   ========================= */
+
+   /* CATEGORY DROPDOWN */
+
 
 .category-dropdown .dropdown-menu {
     min-width: 220px;
@@ -387,4 +387,15 @@ h1, h2, h3, h4, h5, h6{
     color: var(--orange);
 
     transform: translateY(-2px);
+}
+
+
+    /* stile immagini articolo */
+
+.img-preview{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
 }
