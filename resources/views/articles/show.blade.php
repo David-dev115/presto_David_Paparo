@@ -25,7 +25,7 @@
                             <div class="article-image">
                                 
                                 <img
-                                src="{{ Storage::url($image->path) }}"
+                                src="{{ $image->getUrl(300, 300) }}"
                                 alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}"
                                 >
                                 

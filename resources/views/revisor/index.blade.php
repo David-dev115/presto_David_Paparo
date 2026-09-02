@@ -46,7 +46,8 @@
                             
                             <div class="bg-white overflow-hidden" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
                                 
-                                <img src="{{ Storage::url($image->path) }}"
+                                {{--<img src="{{ Storage::url($image->path) }}"--}}
+                                <img src="{{ $image->getUrl(300, 300) }}"
                                 alt="Immagine dell'annuncio {{ $article_to_check->title }}"
                                 class="w-100"
                                 style="aspect-ratio: 1 / 1; object-fit: cover; display: block;">
@@ -74,25 +75,6 @@
                         
                         @endif
                         
-                        {{-- fine nuovo --}}
-                        
-                        {{-- inizio vecchio sistema --}}
-                        
-                        {{-- @for ($i = 1; $i <= 6; $i++)
-                        
-                        <div class="col-6">
-                            
-                            <div class="bg-white overflow-hidden" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
-                                
-                                <img src="https://picsum.photos/500/500?random={{ $i }}" alt="Immagine segnaposto dell'annuncio {{ $article_to_check->title }}" class="w-100" style="aspect-ratio: 1 / 1; object-fit: cover; display: block;">
-                                
-                            </div>
-                            
-                        </div>
-                        
-                        @endfor --}}
-                        
-                        {{-- fine vecchio sistema --}}
                         
                         
                     </div>
