@@ -13,9 +13,7 @@
                     Tutti gli annunci
                 </h1>
 
-                {{-- <p>
-                    Scopri gli ultimi oggetti messi in vendita su Presto.
-                </p> --}}
+
             </header>
 
 

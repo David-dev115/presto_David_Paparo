@@ -5,7 +5,7 @@
         <div class="container py-5">
             
             {{-- Titolo pagina --}}
-            <div class="text-center mb-5">
+            <div class="text-center mb-5"> 
                 
                 <span class="d-block mb-2" style="color: var(--orange); font-size: 0.8rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">
                     AREA REVISORE
@@ -36,27 +36,136 @@
                     
                     <div class="row g-3">
                         
-                        {{-- inizio nuovo --}}
-                        
                         @if ($article_to_check->images->count() > 0)
+                        @foreach ($article_to_check->images as $key => $image)
                         
-                        @foreach ($article_to_check->images as $image)
-                        
-                        <div class="col-6">
+                        <div class="col-12">
                             
-                            <div class="bg-white overflow-hidden" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);">
+                            <div class="card mb-3">
                                 
-                                {{--<img src="{{ Storage::url($image->path) }}"--}}
-                                <img src="{{ $image->getUrl(300, 300) }}"
-                                alt="Immagine dell'annuncio {{ $article_to_check->title }}"
-                                class="w-100"
-                                style="aspect-ratio: 1 / 1; object-fit: cover; display: block;">
+                                <div class="row g-0">
+                                    
+                                    <div class="col-md-4">
+                                        
+                                        <img src="{{ $image->getUrl(300, 300) }}"
+                                        class="img-fluid rounded-start"
+                                        alt="Immagine {{ $key + 1 }} dell'articolo '{{ $article_to_check->title }}'">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 ps-3">
+                                        
+                                        <div class="card-body">
+                                            
+                                            <h5>Labels</h5>
+                                            
+                                            @if ($image->labels)
+                                            
+                                            @foreach ($image->labels as $label)
+                                            
+                                            <p>{{ $label }}</p>
+                                            
+                                            @endforeach
+                                            
+                                            @else
+                                            
+                                            <p class="fst-italic">No labels</p>
+                                            
+                                            @endif
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        
+                                        <div class="card-body">
+                                            
+                                            <h5>Ratings</h5>
+                                            
+                                            <div class="row justify-content-center">
+                                                
+                                                <div class="col-2">
+                                                    
+                                                    <div class="text-center mx-auto {{ $image->adult }}">
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-10">adult</div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row justify-content-center">
+                                                
+                                                <div class="col-2">
+                                                    
+                                                    <div class="text-center mx-auto {{ $image->violence }}">
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-10">violence</div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row justify-content-center">
+                                                
+                                                <div class="col-2">
+                                                    
+                                                    <div class="text-center mx-auto {{ $image->spoof }}">
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-10">spoof</div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row justify-content-center">
+                                                
+                                                <div class="col-2">
+                                                    
+                                                    <div class="text-center mx-auto {{ $image->racy }}">
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-10">racy</div>
+                                                
+                                            </div>
+                                            
+                                            <div class="row justify-content-center">
+                                                
+                                                <div class="col-2">
+                                                    
+                                                    <div class="text-center mx-auto {{ $image->medical }}">
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-10">medical</div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
                                 
                             </div>
                             
                         </div>
                         
                         @endforeach
+                        
+                        {{-- come da US7 --}}
                         
                         @else
                         
@@ -184,14 +293,7 @@
             
             @endif
             
-            {{-- Flash message --}}
-            {{-- @if (session('message'))
             
-            <div class="alert alert-success mt-4">
-                {{ session('message') }}
-            </div>
-            
-            @endif --}}
             
         </div>
         

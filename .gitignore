@@ -28,3 +28,4 @@ Thumbs.db
 
 # aggiungo:
 /storage/*.index
+/google_credential.json
